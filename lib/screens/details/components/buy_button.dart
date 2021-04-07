@@ -14,7 +14,7 @@ class BuyButton extends StatefulWidget {
 class _BuyButtonState extends State<BuyButton> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Positioned(
       bottom: 0,

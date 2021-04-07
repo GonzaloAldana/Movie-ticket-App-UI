@@ -10,9 +10,9 @@ class _TimeSelectorState extends State<TimeSelector> {
   int timeIntexSelected = 1;
 
   var time = [
-    ["01.30", 5],
-    ["06.30", 10],
-    ["10.30", 15]
+    ['01.30', 5],
+    ['06.30', 10],
+    ['10.30', 15]
   ];
 
   Widget _timeItem(String time, int price, bool active) {
@@ -20,10 +20,10 @@ class _TimeSelectorState extends State<TimeSelector> {
       margin: EdgeInsets.symmetric(horizontal: 12),
       padding: EdgeInsets.symmetric(horizontal: appPadding * 0.75),
       decoration: BoxDecoration(
-          border: Border.all(
-        color: active ? primary : white,
-        width: 1,
-      ),
+        border: Border.all(
+          color: active ? primary : white,
+          width: 1,
+        ),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Column(
@@ -32,26 +32,23 @@ class _TimeSelectorState extends State<TimeSelector> {
         children: [
           RichText(
               text: TextSpan(
-                text: time,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  color: active ? primary : white,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
+                  text: time,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: active ? primary : white,
+                  ),
+                  children: <TextSpan>[
+                TextSpan(
                     text: ' PM',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: active ? primary : white,
-                    )
-                  )
-                ]
-              )
-          ),
+                    ))
+              ])),
           Text(
-            "from \$$price",
+            'from \$$price',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
@@ -65,7 +62,7 @@ class _TimeSelectorState extends State<TimeSelector> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Expanded(
       flex: 17,

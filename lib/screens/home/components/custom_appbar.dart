@@ -5,7 +5,7 @@ import 'package:movie_ticket_app/constants/constants.dart';
 class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Align(
       alignment: Alignment.topCenter,

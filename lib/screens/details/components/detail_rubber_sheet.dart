@@ -23,7 +23,7 @@ class DetailRubberSheet extends StatefulWidget {
 
 class _DetailRubberSheetState extends State<DetailRubberSheet> {
   Widget _cast(List castList) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Container(
       height: 120.0,
@@ -67,7 +67,7 @@ class _DetailRubberSheetState extends State<DetailRubberSheet> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return TweenAnimationBuilder(
       duration: Duration(milliseconds: 600),

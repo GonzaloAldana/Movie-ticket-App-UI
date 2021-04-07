@@ -4,7 +4,7 @@ import 'package:movie_ticket_app/constants/constants.dart';
 class PayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Expanded(
       flex: 13,
@@ -28,28 +28,7 @@ class PayButton extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Available",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Container(
-                      height: 15.0,
-                      width: 15.0,
-                      margin: EdgeInsets.only(right: 8.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: white
-                      ),
-                    ),
-                    Text(
-                      "Resvered",
+                      'Available',
                       style: TextStyle(
                         fontSize: 12,
                         color: white,
@@ -66,11 +45,30 @@ class PayButton extends StatelessWidget {
                       margin: EdgeInsets.only(right: 8.0),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
-                          color: primary
-                      ),
+                          color: white),
                     ),
                     Text(
-                      "Selected",
+                      'Resvered',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                      height: 15.0,
+                      width: 15.0,
+                      margin: EdgeInsets.only(right: 8.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: primary),
+                    ),
+                    Text(
+                      'Selected',
                       style: TextStyle(
                         fontSize: 12,
                         color: white,
@@ -101,10 +99,10 @@ class PayButton extends StatelessWidget {
               ),
               FlatButton(
                 color: secondary,
-                onPressed: (){},
+                onPressed: () {},
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0))
-                ),
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(30.0))),
                 child: Container(
                   width: size.width * 0.45,
                   height: size.width * 0.08,

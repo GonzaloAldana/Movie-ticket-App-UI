@@ -8,10 +8,8 @@ class SeatSelector extends StatefulWidget {
 }
 
 class _SeatSelectorState extends State<SeatSelector> {
-
-  Widget _chairList(){
-
-    Size size = MediaQuery.of(context).size;
+  Widget _chairList() {
+    var size = MediaQuery.of(context).size;
 
     // 1 is free seats
     // 2 is selected seats
@@ -38,20 +36,20 @@ class _SeatSelectorState extends State<SeatSelector> {
                     Expanded(
                       flex: x == 0 || x == 8 ? 2 : 1,
                       child: x == 0 ||
-                          x == 8 ||
-                          (i == 0 && x == 1) ||
-                          (i == 0 && x == 7) ||
-                          (x == 4)
+                              x == 8 ||
+                              (i == 0 && x == 1) ||
+                              (i == 0 && x == 7) ||
+                              (x == 4)
                           ? Container()
                           : Container(
-                        height: size.width / 11 - 10,
-                        margin: EdgeInsets.all(5),
-                        child: _chairStatus[i][x - 1] == 1
-                            ? BuildChairs.availableChair()
-                            : _chairStatus[i][x - 1] == 2
-                            ? BuildChairs.selectedChair()
-                            : BuildChairs.reservedChair(),
-                      ),
+                              height: size.width / 11 - 10,
+                              margin: EdgeInsets.all(5),
+                              child: _chairStatus[i][x - 1] == 1
+                                  ? BuildChairs.availableChair()
+                                  : _chairStatus[i][x - 1] == 2
+                                      ? BuildChairs.selectedChair()
+                                      : BuildChairs.reservedChair(),
+                            ),
                     ),
                 ],
               ),
@@ -63,7 +61,7 @@ class _SeatSelectorState extends State<SeatSelector> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Expanded(
       flex: 47,

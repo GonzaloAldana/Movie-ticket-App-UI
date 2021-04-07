@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_ticket_app/models/cast_model.dart';
 
-class MovieModel{
+class MovieModel {
   int id;
   String name;
   List<String> genre;
@@ -10,9 +10,9 @@ class MovieModel{
   String storyLine;
   Image image;
   Image imageLogo;
-  List<MovieCastModel> castList = List();
+  List<MovieCastModel> castList = [];
 
-  MovieModel ({
+  MovieModel({
     this.id,
     this.genre,
     this.name,
@@ -22,5 +22,5 @@ class MovieModel{
     this.image,
     this.imageLogo,
     this.castList,
-});
+  });
 }

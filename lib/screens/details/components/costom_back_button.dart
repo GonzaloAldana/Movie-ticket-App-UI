@@ -13,7 +13,7 @@ class CustomBackButton extends StatefulWidget {
 class _CustomBackButtonState extends State<CustomBackButton> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Positioned(
       left: 16,
@@ -26,12 +26,11 @@ class _CustomBackButtonState extends State<CustomBackButton> {
             height: size.height * 0.075,
             width: size.width * 0.15,
             decoration: BoxDecoration(
-              color: black.withOpacity(0.4),
-              border: Border.all(
-                color: white.withOpacity(0.35),
-              ),
-              borderRadius: BorderRadius.circular(20.0)
-            ),
+                color: black.withOpacity(0.4),
+                border: Border.all(
+                  color: white.withOpacity(0.35),
+                ),
+                borderRadius: BorderRadius.circular(20.0)),
             child: Icon(
               Icons.arrow_back_ios,
               color: white,

@@ -13,16 +13,19 @@ class Background extends StatefulWidget {
 class _BackgroundState extends State<Background> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Positioned(
       top: -48,
       bottom: 0,
       child: TweenAnimationBuilder(
         duration: Duration(milliseconds: 700),
-        tween: Tween<double>(begin: 0.25,end: 1),
-        builder: (_, value, child){
-          return Transform.scale(scale: value,child: child,);
+        tween: Tween<double>(begin: 0.25, end: 1),
+        builder: (_, value, child) {
+          return Transform.scale(
+            scale: value,
+            child: child,
+          );
         },
         child: Stack(
           children: [

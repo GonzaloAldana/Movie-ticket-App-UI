@@ -3,7 +3,6 @@ import 'package:movie_ticket_app/constants/constants.dart';
 import 'package:movie_ticket_app/data/data.dart';
 
 class BackgroundListView extends StatefulWidget {
-
   final ScrollController backgroundScrollController;
 
   BackgroundListView(this.backgroundScrollController);
@@ -13,13 +12,11 @@ class BackgroundListView extends StatefulWidget {
 }
 
 class _BackgroundListViewState extends State<BackgroundListView> {
-
   var movieData = MovieData();
 
   @override
   Widget build(BuildContext context) {
-
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return ListView.builder(
       controller: widget.backgroundScrollController,
@@ -55,7 +52,7 @@ class _BackgroundListViewState extends State<BackgroundListView> {
                       ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      stops: [ 0.5, 0.9]),
+                      stops: [0.5, 0.9]),
                 ),
               ),
             ],

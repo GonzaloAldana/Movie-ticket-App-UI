@@ -5,7 +5,6 @@ import 'package:movie_ticket_app/screens/details/detail_screen.dart';
 import 'package:movie_ticket_app/widget/genres_format.dart';
 import 'package:movie_ticket_app/widget/star_rating.dart';
 
-
 class MovieIndex extends StatefulWidget {
   final int index;
   final ScrollController movieScrollController;
@@ -29,15 +28,15 @@ class _MovieIndexState extends State<MovieIndex> {
     } else if (widget.movieScrollController.offset <= activeOffset) {
       translate = maxMovieTranslate -
           ((widget.movieScrollController.offset -
-              (activeOffset - widget.movieItemWidth)) /
+                  (activeOffset - widget.movieItemWidth)) /
               widget.movieItemWidth *
               maxMovieTranslate);
     } else if (widget.movieScrollController.offset <
         activeOffset + widget.movieItemWidth) {
       translate = ((widget.movieScrollController.offset -
-          (activeOffset - widget.movieItemWidth)) /
-          widget.movieItemWidth *
-          maxMovieTranslate) -
+                  (activeOffset - widget.movieItemWidth)) /
+              widget.movieItemWidth *
+              maxMovieTranslate) -
           maxMovieTranslate;
     } else {
       translate = maxMovieTranslate;
@@ -52,16 +51,16 @@ class _MovieIndexState extends State<MovieIndex> {
       opacity = 0;
     } else if (widget.movieScrollController.offset <= activeOffset) {
       opacity = ((widget.movieScrollController.offset -
-          (activeOffset - widget.movieItemWidth)) /
+              (activeOffset - widget.movieItemWidth)) /
           widget.movieItemWidth *
           100);
     } else if (widget.movieScrollController.offset <
         activeOffset + widget.movieItemWidth) {
       opacity = 100 -
           (((widget.movieScrollController.offset -
-              (activeOffset - widget.movieItemWidth)) /
-              widget.movieItemWidth *
-              100) -
+                      (activeOffset - widget.movieItemWidth)) /
+                  widget.movieItemWidth *
+                  100) -
               100);
     } else {
       opacity = 0;
@@ -71,9 +70,7 @@ class _MovieIndexState extends State<MovieIndex> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    var size = MediaQuery.of(context).size;
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: appPadding + 4),
@@ -83,9 +80,9 @@ class _MovieIndexState extends State<MovieIndex> {
           AnimatedBuilder(
             animation: widget.movieScrollController,
             builder: (ctx, child) {
-              double activeOffset = widget.index * widget.movieItemWidth;
+              var activeOffset = widget.index * widget.movieItemWidth;
 
-              double translate = _movieTranslate(
+              var translate = _movieTranslate(
                   widget.movieScrollController.offset, activeOffset);
 
               return SizedBox(
@@ -106,10 +103,7 @@ class _MovieIndexState extends State<MovieIndex> {
               ),
             ),
           ),
-          GenresFormat(
-              movieData.movieList[widget.index].genre,
-              white
-          ),
+          GenresFormat(movieData.movieList[widget.index].genre, white),
           SizedBox(
             height: size.height * .005,
           ),
@@ -126,37 +120,39 @@ class _MovieIndexState extends State<MovieIndex> {
             height: size.height * .01,
           ),
           InkWell(
-            onTap: () =>
-                Navigator.push(context, PageRouteBuilder(
-                  pageBuilder:(context, a1, a2) => DetailScreen(
-                    movie: movieData.movieList[widget.index],
-                    size: size,
-                  )
-                )),
+            onTap: () => Navigator.push(
+                context,
+                PageRouteBuilder(
+                    pageBuilder: (context, a1, a2) => DetailScreen(
+                          movie: movieData.movieList[widget.index],
+                          size: size,
+                        ))),
             child: Container(
               width: size.width * .25,
               height: size.height * .05,
               decoration: BoxDecoration(
-                  color: secondary,
-                  borderRadius: BorderRadius.circular(10.0)
-              ),
-              child: Center(child: Text('BUY TICKET', style: TextStyle(
-                color: white,
-                fontWeight: FontWeight.bold,
-              ),)),
+                  color: secondary, borderRadius: BorderRadius.circular(10.0)),
+              child: Center(
+                  child: Text(
+                'BUY TICKET',
+                style: TextStyle(
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                ),
+              )),
             ),
           ),
           SizedBox(
             height: size.height * .01,
           ),
           GestureDetector(
-            onTap: () =>
-                Navigator.push(context, PageRouteBuilder(
-                    pageBuilder:(context, a1, a2) => DetailScreen(
-                      movie: movieData.movieList[widget.index],
-                      size: size,
-                    )
-                )),
+            onTap: () => Navigator.push(
+                context,
+                PageRouteBuilder(
+                    pageBuilder: (context, a1, a2) => DetailScreen(
+                          movie: movieData.movieList[widget.index],
+                          size: size,
+                        ))),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(40.0),
               child: Image(
@@ -172,8 +168,8 @@ class _MovieIndexState extends State<MovieIndex> {
           AnimatedBuilder(
             animation: widget.movieScrollController,
             builder: (context, child) {
-              double activeOffset = widget.index * widget.movieItemWidth;
-              double opacity = _movieDescriptionOpacity(
+              var activeOffset = widget.index * widget.movieItemWidth;
+              var opacity = _movieDescriptionOpacity(
                   widget.movieScrollController.offset, activeOffset);
 
               return Opacity(

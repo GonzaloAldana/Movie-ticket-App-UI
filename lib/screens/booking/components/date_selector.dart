@@ -13,34 +13,34 @@ class _DateSelectorState extends State<DateSelector> {
   String _dayFormat(int dayWeek) {
     switch (dayWeek) {
       case 1:
-        return "MO";
+        return 'MO';
         break;
       case 2:
-        return "TU";
+        return 'TU';
         break;
       case 3:
-        return "WE";
+        return 'WE';
         break;
       case 4:
-        return "TH";
+        return 'TH';
         break;
       case 5:
-        return "FR";
+        return 'FR';
         break;
       case 6:
-        return "Sa";
+        return 'Sa';
         break;
       case 7:
-        return "Su";
+        return 'Su';
         break;
       default:
-        return "MO";
+        return 'MO';
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Expanded(
       flex: 13,

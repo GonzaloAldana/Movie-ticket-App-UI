@@ -13,7 +13,7 @@ class CustomAppBar extends StatefulWidget {
 class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
 
     return Expanded(
       flex: 15,
@@ -37,18 +37,15 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 child: Material(
                   color: Colors.transparent,
                   child: InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pop(context);
                     },
                     child: Container(
                       height: size.height * 0.075,
                       width: size.width * 0.15,
                       decoration: BoxDecoration(
-                        border: Border.all(
-                          color: white.withOpacity(0.35)
-                        ),
-                        borderRadius: BorderRadius.circular(20.0)
-                      ),
+                          border: Border.all(color: white.withOpacity(0.35)),
+                          borderRadius: BorderRadius.circular(20.0)),
                       child: Icon(
                         Icons.arrow_back_ios,
                         color: white,

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class GenresFormat extends StatefulWidget {
-
   final List<String> genres;
-  Color color;
+  final Color color;
 
   GenresFormat(this.genres, this.color);
 
@@ -13,7 +12,6 @@ class GenresFormat extends StatefulWidget {
 }
 
 class _GenresFormatState extends State<GenresFormat> {
-
   @override
   Widget build(BuildContext context) {
     Widget _dot = Container(
@@ -37,9 +35,11 @@ class _GenresFormatState extends State<GenresFormat> {
               _dot,
             ],
           );
-        }
-        else {
-          return Text(widget.genres[index],style: TextStyle(color: widget.color,fontSize: 12),);
+        } else {
+          return Text(
+            widget.genres[index],
+            style: TextStyle(color: widget.color, fontSize: 12),
+          );
         }
       }),
     );
